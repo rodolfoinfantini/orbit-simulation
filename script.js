@@ -8,17 +8,10 @@ canvas.height = window.innerHeight
 document.body.appendChild(canvas)
 const ctx = canvas.getContext('2d')
 
-const resetButton = document.querySelector('form p')
-
-resetButton.onclick = () => {
-    document.querySelector('#const').value = 9.80665
-}
+document.querySelector('form p').onclick = () => (document.querySelector('#const').value = 9.80665)
 
 const urlParams = new URLSearchParams(window.location.search)
-urlParams.forEach((value, key) => {
-    console.log(key, value)
-    document.querySelector(`#${key}`).value = value
-})
+urlParams.forEach((value, key) => (document.querySelector(`#${key}`).value = value))
 
 const balls = []
 

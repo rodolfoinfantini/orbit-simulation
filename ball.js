@@ -75,13 +75,11 @@ export default class Ball {
     }
 }
 
-function gravityStrength(m1, m2, G, distance) {
-    return ((m1 * m2) / Math.pow(distance, 2)) * G
-}
+const gravityStrength = (m1, m2, G, distance) => ((m1 * m2) / Math.pow(distance, 2)) * G
 
-function randomColor() {
-    return `hsla(${Math.floor(Math.random() * 360)}, 90%, 30%, 70%)`
-}
+const randomColor = () => `hsla(${Math.floor(Math.random() * 360)}, 90%, 30%, 70%)`
+
+const distance = (v1, v2) => Math.sqrt(Math.pow(v1.x - v2.x, 2) + Math.pow(v1.y - v2.y, 2))
 
 function normalizeVector(v) {
     const length = Math.sqrt(v.x * v.x + v.y * v.y)
@@ -89,8 +87,4 @@ function normalizeVector(v) {
         x: v.x / length,
         y: v.y / length,
     }
-}
-
-function distance(v1, v2) {
-    return Math.sqrt(Math.pow(v1.x - v2.x, 2) + Math.pow(v1.y - v2.y, 2))
 }
