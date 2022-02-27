@@ -26,15 +26,15 @@ const balls = []
 const ball1 = {
     x: (canvas.width / 5) * 2,
     y: canvas.height / 2,
-    vx: +urlParams.get('b1vx') || -1,
-    vy: +urlParams.get('b1vy') || 5,
+    vx: +urlParams.get('b1vx') || -4,
+    vy: +urlParams.get('b1vy') || 6,
     mass: +urlParams.get('b1mass') || 60,
 }
 const ball2 = {
     x: (canvas.width / 5) * 3,
     y: canvas.height / 2,
-    vx: +urlParams.get('b2vx') || 1,
-    vy: +urlParams.get('b2vy') || -5,
+    vx: +urlParams.get('b2vx') || 4,
+    vy: +urlParams.get('b2vy') || -6,
     mass: +urlParams.get('b2mass') || 50,
 }
 const constant = +urlParams.get('const') || null
