@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="script.js" defer type="module"></script>
+    </head>
+    <body>
+        <form>
+            <div>
+                <div>
+                    <fieldset class="ball-1">
+                        <legend>Ball 1</legend>
+                        <fieldset class="vel">
+                            <legend>Initial velocity</legend>
+                            <label for="b1vx">
+                                <span>X</span>
+                                <input type="number" id="b1vx" name="b1vx" value="-1" step="any" />
+                            </label>
+                            <label for="b1vy">
+                                <span>Y</span>
+                                <input type="number" id="b1vy" name="b1vy" value="5" step="any" />
+                            </label>
+                        </fieldset>
+
+                        <label for="b1mass">
+                            <span>Mass</span>
+                            <input type="number" name="b1mass" id="b1mass" value="60" step="any" />
+                        </label>
+                    </fieldset>
+                    <fieldset class="ball-2">
+                        <legend>Ball 2</legend>
+                        <fieldset class="vel">
+                            <legend>Initial velocity</legend>
+                            <label for="b2vx">
+                                <span>X</span>
+                                <input type="number" id="b2vx" name="b2vx" value="1" step="any" />
+                            </label>
+                            <label for="b2vy">
+                                <span>Y</span>
+                                <input type="number" id="b2vy" name="b2vy" value="-5" step="any" />
+                            </label>
+                        </fieldset>
+
+                        <label for="b2mass">
+                            <span>Mass</span>
+                            <input type="number" name="b2mass" id="b2mass" value="50" step="any" />
+                        </label>
+                    </fieldset>
+                </div>
+                <label for="const">
+                    <span>Gravitational constant</span>
+                    <input type="number" id="const" name="const" value="9.80665" step="any" />
+                    <p>Reset to Earth's constant</p>
+                </label>
+            </div>
+            <button>Run</button>
+        </form>
+    </body>
+</html>
