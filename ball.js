@@ -31,7 +31,7 @@ export default class Ball {
         this.color = randomColor()
         this.mass = mass
         this.secondBall = secondBall
-        this.gravity.constant = constant
+        this.gravity.constant = constant ?? 9.80665
     }
 
     draw(ctx) {

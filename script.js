@@ -15,6 +15,7 @@ resetButton.onclick = () => {
 
 const urlParams = new URLSearchParams(window.location.search)
 urlParams.forEach((value, key) => {
+    console.log(key, value)
     document.querySelector(`#${key}`).value = value
 })
 
@@ -22,29 +23,18 @@ const ctx = canvas.getContext('2d')
 
 const balls = []
 
-const vel = {
-    b1: {
-        y: +urlParams.get('b1vy') || 5,
-        x: +urlParams.get('b1vx') || -1,
-    },
-    b2: {
-        y: +urlParams.get('b2vy') || -5,
-        x: +urlParams.get('b2vx') || 1,
-    },
-}
-
 const ball1 = {
     x: (canvas.width / 5) * 2,
     y: canvas.height / 2,
-    vx: vel.b1.x,
-    vy: vel.b1.y,
+    vx: +urlParams.get('b1vx') || -1,
+    vy: +urlParams.get('b1vy') || 5,
     mass: +urlParams.get('b1mass') || 60,
 }
 const ball2 = {
     x: (canvas.width / 5) * 3,
     y: canvas.height / 2,
-    vx: vel.b2.x,
-    vy: vel.b2.y,
+    vx: +urlParams.get('b2vx') || 1,
+    vy: +urlParams.get('b2vy') || -5,
     mass: +urlParams.get('b2mass') || 50,
 }
 const constant = +urlParams.get('const') || null
