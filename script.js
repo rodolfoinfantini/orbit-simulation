@@ -8,7 +8,7 @@ canvas.height = window.innerHeight
 document.body.appendChild(canvas)
 const ctx = canvas.getContext('2d')
 
-// document.querySelector('form p').onclick = () => (document.querySelector('#const').value = 9.80665)
+document.querySelector('form p').onclick = () => (location.search = '')
 
 const urlParams = new URLSearchParams(window.location.search)
 urlParams.forEach((value, key) => {
