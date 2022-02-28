@@ -14,11 +14,15 @@
                 <div>
                     <fieldset class="ball-1">
                         <legend>Ball 1</legend>
+                        <label for="b1static">
+                            Static
+                            <input type="checkbox" name="b1static" id="b1static" value="true" />
+                        </label>
                         <fieldset class="vel">
                             <legend>Initial velocity</legend>
                             <label for="b1vx">
                                 <span>X</span>
-                                <input type="number" id="b1vx" name="b1vx" value="-2" step="any" />
+                                <input type="number" id="b1vx" name="b1vx" value="0" step="any" />
                             </label>
                             <label for="b1vy">
                                 <span>Y</span>
@@ -27,17 +31,27 @@
                         </fieldset>
 
                         <label for="b1mass">
-                            <span>Mass</span>
-                            <input type="number" name="b1mass" id="b1mass" value="60" step="any" />
+                            <span>Mass (tons)</span>
+                            <input
+                                type="number"
+                                name="b1mass"
+                                id="b1mass"
+                                value="20000"
+                                step="100"
+                            />
                         </label>
                     </fieldset>
                     <fieldset class="ball-2">
                         <legend>Ball 2</legend>
+                        <label for="b2static">
+                            Static
+                            <input type="checkbox" name="b2static" id="b2static" value="true" />
+                        </label>
                         <fieldset class="vel">
                             <legend>Initial velocity</legend>
                             <label for="b2vx">
                                 <span>X</span>
-                                <input type="number" id="b2vx" name="b2vx" value="2" step="any" />
+                                <input type="number" id="b2vx" name="b2vx" value="0" step="any" />
                             </label>
                             <label for="b2vy">
                                 <span>Y</span>
@@ -46,15 +60,20 @@
                         </fieldset>
 
                         <label for="b2mass">
-                            <span>Mass</span>
-                            <input type="number" name="b2mass" id="b2mass" value="50" step="any" />
+                            <span>Mass (tons)</span>
+                            <input
+                                type="number"
+                                name="b2mass"
+                                id="b2mass"
+                                value="20000"
+                                step="100"
+                            />
                         </label>
                     </fieldset>
                 </div>
-                <label for="const">
-                    <span>Gravitational constant</span>
-                    <input type="number" id="const" name="const" value="9.80665" step="any" />
-                    <p>Reset to Earth's constant</p>
+                <label for="distance">
+                    <span>Distance</span>
+                    <input type="number" id="distance" name="distance" value="500" step="10" />
                 </label>
             </div>
             <button>Run</button>

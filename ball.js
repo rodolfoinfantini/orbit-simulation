@@ -15,15 +15,17 @@ export default class Ball {
         strength: 1,
         constant: 9.80665,
     }
-    radius = 10
+    radius = 15
     color
     mass = 1
+
+    isStatic = false
 
     path = []
 
     secondBall
 
-    constructor(x, y, vx, vy, mass = 1, secondBall = null, constant = 9.80665) {
+    constructor(x, y, vx, vy, mass = 1, secondBall = null, constant = 9.80665, isStatic = false) {
         this.pos.x = x
         this.pos.y = y
         this.velocity.x = vx
@@ -32,6 +34,7 @@ export default class Ball {
         this.mass = mass
         this.secondBall = secondBall
         this.gravity.constant = constant ?? 9.80665
+        this.isStatic = isStatic ?? false
     }
 
     draw(ctx) {
@@ -51,6 +54,7 @@ export default class Ball {
     }
 
     update(ctx) {
+        if (this.isStatic) return this.draw(ctx)
         this.path.push({
             x: this.pos.x,
             y: this.pos.y,
@@ -64,7 +68,7 @@ export default class Ball {
         this.gravity.strength = gravityStrength(
             this.mass,
             this.secondBall.mass,
-            this.gravity.constant,
+            // this.gravity.constant,
             distance(this.pos, this.secondBall.pos)
         )
         this.velocity.x += this.gravity.direction.x * this.gravity.strength
@@ -75,7 +79,10 @@ export default class Ball {
     }
 }
 
-const gravityStrength = (m1, m2, G, distance) => ((m1 * m2) / Math.pow(distance, 2)) * G
+const G = 6.67 * Math.pow(10, -11)
+
+// equation: F = G * (m1 * m2 / d^2)
+const gravityStrength = (m1, m2, distance) => G * ((m1 * m2) / Math.pow(distance, 2))
 
 const randomColor = () => `hsla(${Math.floor(Math.random() * 360)}, 90%, 30%, 70%)`
 
